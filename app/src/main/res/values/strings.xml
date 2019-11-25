@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">SwipeAndUndo</string>
+    <string name="moved_to_trash">Moved to Trash.</string>
+</resources>

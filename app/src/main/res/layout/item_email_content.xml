@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="email"
+            type="com.haolu.swipeandundo.model.Email" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/white"
+        android:padding="8dp">
+
+        <ImageView
+            android:id="@+id/avatar"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:padding="8dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:src="@drawable/ic_account_circle_black_24dp"
+            tools:src="@drawable/ic_account_circle_black_24dp" />
+
+        <TextView
+            android:id="@+id/name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:text="@{email.name}"
+            app:layout_constraintLeft_toRightOf="@id/avatar"
+            app:layout_constraintTop_toTopOf="@id/avatar"
+            tools:text="John Doe" />
+
+        <TextView
+            android:id="@+id/subject"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:text="@{email.subject}"
+            app:layout_constraintLeft_toLeftOf="@id/name"
+            app:layout_constraintTop_toBottomOf="@id/name"
+            tools:text="Lorem ipsum" />
+
+        <TextView
+            android:id="@+id/body"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:maxLines="1"
+            android:text="@{email.body}"
+            app:layout_constraintBottom_toBottomOf="@id/avatar"
+            app:layout_constraintLeft_toLeftOf="@id/subject"
+            app:layout_constraintRight_toLeftOf="@id/favorite"
+            app:layout_constraintTop_toBottomOf="@id/subject"
+            tools:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer aliquam mauris sit amet nulla elementum, vitae pulvinar augue luctus. Ut leo tortor, suscipit sit amet aliquet vitae, suscipit nec dui. Ut placerat, libero ut sagittis sagittis, nulla velit consequat dui, condimentum luctus arcu leo ac quam. Aenean cursus est purus, nec scelerisque sapien accumsan id. Integer aliquet a nibh at faucibus. Nulla et neque egestas, venenatis quam venenatis, maximus arcu. Ut eget dignissim nulla. Integer at felis turpis. Mauris quis est ante." />
+
+        <TextView
+            android:id="@+id/date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{email.date}"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="@id/avatar"
+            tools:text="Oct 13" />
+
+        <ImageView
+            android:id="@+id/favorite"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_star_border_black_24dp"
+            app:layout_constraintBottom_toBottomOf="@id/avatar"
+            app:layout_constraintRight_toRightOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
